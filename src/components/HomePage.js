@@ -11,8 +11,13 @@ function HomePage({ testProp2 }) {
       .then(setDaysList)
   }, [])
 
+  function handleDeleteDay(dayToDelete) {
+    const updatedDaysList = daysList.filter((day) => day.id !== dayToDelete.id);
+    setDaysList(updatedDaysList)
+  }
+
   const daysItem = daysList.map((day) => (
-    <DayCard key={day.id} day={day} />
+    <DayCard onDeleteDay={handleDeleteDay} key={day.id} day={day} />
   ))
 
   return (
