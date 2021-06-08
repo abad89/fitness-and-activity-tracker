@@ -1,4 +1,3 @@
-import {useState, useEffect} from "react"
 import { Route, Switch } from "react-router-dom";
 import HomePage from "./HomePage";
 import AddDayPage from "./AddDayPage";
