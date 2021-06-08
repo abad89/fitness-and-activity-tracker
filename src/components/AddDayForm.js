@@ -29,7 +29,7 @@ function AddDayForm() {
       sleepMinutes: parseInt(formData.sleepMinutes),
       highlight: "no"
     };
-    fetch("http://localhost:3001/days", {
+    fetch("https://fat-app-json-server.herokuapp.com/days", {
       method: "POST",
       headers: {
         "Content-Type": "application/JSON",

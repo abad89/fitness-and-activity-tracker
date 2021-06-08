@@ -2,7 +2,7 @@ function DayCard({ day, onDeleteDay, onUpdateDay }) {
   const { id, month, date, year, steps, sleepHours, sleepMinutes, highlight } =
     day;
   function handleDeleteClick() {
-    fetch(`http://localhost:3001/days/${id}`, {
+    fetch(`https://fat-app-json-server.herokuapp.com/days/${id}`, {
       method: "DELETE",
     })
       .then((r) => r.json())
@@ -14,7 +14,7 @@ function DayCard({ day, onDeleteDay, onUpdateDay }) {
   function handleHighlightClick() {
     if (highlight === "no") {
       const updatedObj = {highlight: "yes"}
-      fetch(`http://localhost:3001/days/${id}`, {
+      fetch(`https://fat-app-json-server.herokuapp.com/days/${id}`, {
         method: "PATCH",
         headers: {
             "Content-Type": "application/json",
@@ -26,7 +26,7 @@ function DayCard({ day, onDeleteDay, onUpdateDay }) {
 
     } else {
         const updatedObj = {highlight: "no"}
-      fetch(`http://localhost:3001/days/${id}`, {
+      fetch(`https://fat-app-json-server.herokuapp.com/days/${id}`, {
           method: "PATCH",
           headers: {
               "Content-Type": "application/json",
@@ -39,8 +39,7 @@ function DayCard({ day, onDeleteDay, onUpdateDay }) {
   }
 
   return (
-    <div className={`daycard-hl-${highlight}`}>
-      <h2>Test (DayCard)</h2>
+    <div className={`col-3 hl-${highlight}`}>
       <h3>
         {month} {date}, {year}
       </h3>
