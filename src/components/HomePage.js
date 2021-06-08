@@ -11,10 +11,14 @@ function HomePage({ testProp2 }) {
       .then(console.log(daysList))
   }, [])
 
+  const daysItem = daysList.map((day) => (
+    <DayCard key={day.id} day={day} />
+  ))
+
   return (
     <div>
       <h1>Fitness and Activeness Tracker App</h1>
-      <DayCard testProp3={testProp2} />
+      {daysItem}
     </div>
   );
 }
