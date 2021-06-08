@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom"
 import DayCard from "./DayCard";
 
-function HomePage({ testProp2 }) {
+function HomePage() {
   const [daysList, setDaysList] = useState([])
 
   useEffect(() => {
@@ -16,8 +16,14 @@ function HomePage({ testProp2 }) {
     setDaysList(updatedDaysList)
   }
 
+function handleUpdateDay(dayToUpdate) {
+  const updatedDaysList = daysList.map((day) => 
+  day.id === dayToUpdate.id ? dayToUpdate : day)
+  setDaysList(updatedDaysList)
+}
+
   const daysItem = daysList.map((day) => (
-    <DayCard onDeleteDay={handleDeleteDay} key={day.id} day={day} />
+    <DayCard onDeleteDay={handleDeleteDay} onUpdateDay={handleUpdateDay} key={day.id} day={day} />
   ))
 
   return (

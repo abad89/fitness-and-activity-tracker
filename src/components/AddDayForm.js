@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
 function AddDayForm() {
-    let history = useHistory();
+  let history = useHistory();
   const [formData, setFormData] = useState({
     month: "",
     date: "",
@@ -27,6 +27,7 @@ function AddDayForm() {
       steps: parseInt(formData.steps),
       sleepHours: parseInt(formData.sleepHours),
       sleepMinutes: parseInt(formData.sleepMinutes),
+      highlight: "no"
     };
     fetch("http://localhost:3001/days", {
       method: "POST",
@@ -36,7 +37,6 @@ function AddDayForm() {
       body: JSON.stringify(newDay),
     })
       .then((r) => r.json())
-      .then((r) => console.log(r))
       .then(history.push("/"));
   }
 

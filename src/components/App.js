@@ -2,10 +2,7 @@ import { Route, Switch } from "react-router-dom";
 import HomePage from "./HomePage";
 import AddDayPage from "./AddDayPage";
 
-function App() {
-  const testProp = "This is the testProp string!";
-
-  
+function App() { 
 
   return (
     <div className="App">
@@ -14,7 +11,7 @@ function App() {
           <AddDayPage />
         </Route>
         <Route exact path="/">
-          <HomePage testProp2={testProp} />
+          <HomePage />
         </Route>
       </Switch>
     </div>
