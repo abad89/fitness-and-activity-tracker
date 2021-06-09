@@ -10,7 +10,7 @@ import {
 
 function SleepChart({ daysList }) {
   return (
-    <div className="col-6">
+    <div className="col-6 border border-1 border-primary">
       <h3>Sleep by Date</h3>
       <div>
         <LineChart
@@ -19,7 +19,7 @@ function SleepChart({ daysList }) {
           data={daysList}
           style={{ margin: "auto" }}
         >
-          <Line type="monotone" dataKey="sleep" stroke="black" />
+          <Line type="monotone" dataKey="sleep" stroke="#0d6efd" />
           <CartesianGrid stroke="black" />
           <Tooltip />
           <XAxis dataKey="iso" />

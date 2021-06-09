@@ -31,7 +31,7 @@ function HomePage({ daysList, onUpdateDay, onDeleteDay }) {
         <button
           onClick={handleStepsClick}
           type="button"
-          className={`btn btn-sm ${hideStepsChart?`btn-warning`:`btn-secondary`} m-5`}
+          className={`btn btn-sm ${hideStepsChart?`btn-secondary`:`btn-warning`} m-5`}
         >
           {hideStepsChart ? "Hide" : "Show"} Steps Chart
         </button>
@@ -40,7 +40,7 @@ function HomePage({ daysList, onUpdateDay, onDeleteDay }) {
         </NavLink>
         <button
           onClick={handleSleepClick}
-          className={`btn btn-sm ${hideSleepChart?`btn-warning`:`btn-secondary`} m-5`}
+          className={`btn btn-sm ${hideSleepChart?`btn-secondary`:`btn-warning`} m-5`}
         >
           {hideSleepChart ? "Hide" : "Show"} Sleep Amount Chart
         </button>
