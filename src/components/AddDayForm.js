@@ -9,6 +9,9 @@ function AddDayForm({ onAddDay }) {
     steps: "",
     sleepHours: "",
     sleepMinutes: "",
+    highlight: "no",
+    iso: "",
+    sleep: "",
   });
 
   function handleChange(e) {
@@ -29,7 +32,8 @@ function AddDayForm({ onAddDay }) {
       sleepHours: parseInt(formData.sleepHours),
       sleepMinutes: parseInt(formData.sleepMinutes),
       highlight: "no",
-      iso: `${formData.year}-${String(parseInt(formData.month)).padStart(2, "0")}-${String(parseInt(formData.date)).padStart(2, "0")}`
+      iso: `${formData.year}-${String(parseInt(formData.month)).padStart(2, "0")}-${String(parseInt(formData.date)).padStart(2, "0")}`,
+      sleep: parseFloat(`${parseInt(formData.sleepHours)}.${String(parseInt(formData.sleepMinutes)).padStart(2, "0")}`)    
     };
     fetch("https://fat-app-json-server.herokuapp.com/days", {
       method: "POST",
