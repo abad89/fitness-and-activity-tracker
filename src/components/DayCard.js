@@ -45,7 +45,7 @@ function DayCard({ day, onDeleteDay, onUpdateDay }) {
     <div className="col-4">
       <div className={`border ${highlight==="yes"?"border-warning":"border-primary"} card text-black bg-white m-3 w-18rem`}>
         <div className={`card-header  ${highlight==="yes"?"bg-warning":"bg-primary"} text-white`}>
-          {dt.toLocaleString()}
+          {dt.toLocaleString(DateTime.DATE_FULL)}
         </div>
         <div className="card-body">
           <p className="card-text">Steps Taken: {steps.toLocaleString()}</p>

@@ -23,7 +23,7 @@ function Chart({ daysList }) {
       >
         <Line type="monotone" dataKey="steps" stroke="black" />
         <CartesianGrid stroke="black" />
-        <XAxis dataKey="month" />
+        <XAxis dataKey="iso" />
         <YAxis />
       </LineChart>
     </div>

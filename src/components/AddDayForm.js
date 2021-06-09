@@ -18,6 +18,7 @@ function AddDayForm({ onAddDay }) {
     });
   }
 
+
   function handleSubmit(e) {
     e.preventDefault();
     const newDay = {
@@ -28,7 +29,7 @@ function AddDayForm({ onAddDay }) {
       sleepHours: parseInt(formData.sleepHours),
       sleepMinutes: parseInt(formData.sleepMinutes),
       highlight: "no",
-      iso: `${formData.year}-${formData.month}-${formData.date}`
+      iso: `${formData.year}-${String(parseInt(formData.month)).padStart(2, "0")}-${String(parseInt(formData.date)).padStart(2, "0")}`
     };
     fetch("https://fat-app-json-server.herokuapp.com/days", {
       method: "POST",
