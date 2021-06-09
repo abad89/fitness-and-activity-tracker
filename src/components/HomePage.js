@@ -26,24 +26,24 @@ function HomePage({ daysList, onUpdateDay, onDeleteDay }) {
 
   return (
     <div className="container text-center">
-      <div className="d-flex  justify-content-evenly mw-100">
+      <div className="my-5">
         <button
           onClick={handleStepsClick}
           type="button"
-          className={`btn btn-sm ${
+          className={`mx-2 btn ${
             hideStepsChart ? `btn-secondary` : `btn-warning`
-          } m-5`}
+          } col-3`}
         >
           {hideStepsChart ? "Hide" : "Show"} Steps Chart
         </button>
         <NavLink to="/add">
-          <button className="btn btn-success btn-lg my-5 ">Add Day</button>
+          <button className="mx-2 btn btn-success col-3">Add Day</button>
         </NavLink>
         <button
           onClick={handleSleepClick}
-          className={`btn btn-sm ${
+          className={`mx-2 btn ${
             hideSleepChart ? `btn-secondary` : `btn-warning`
-          } m-5`}
+          } col-3`}
         >
           {hideSleepChart ? "Hide" : "Show"} Sleep Amount Chart
         </button>
