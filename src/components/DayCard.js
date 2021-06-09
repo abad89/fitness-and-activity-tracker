@@ -39,8 +39,8 @@ function DayCard({ day, onDeleteDay, onUpdateDay }) {
 
   return (
     <div className="col-4">
-      <div className={`hl-${highlight} card text-black bg-white m-3 w-18rem`}>
-        <div className="card-header">
+      <div className={`border ${highlight==="yes"?"border-warning":"border-primary"} card text-black bg-white m-3 w-18rem`}>
+        <div className={`card-header  ${highlight==="yes"?"bg-warning":"bg-primary"} text-white`}>
           {month} {date}, {year}
         </div>
         <div className="card-body">
@@ -50,7 +50,7 @@ function DayCard({ day, onDeleteDay, onUpdateDay }) {
           </p>
           <div className="btn-group align-self-center">
             <button
-              className="btn btn-primary btn-sm"
+              className={`btn ${highlight==="yes"?"btn-secondary":"btn-warning"} btn-sm`}
               onClick={handleHighlightClick}
             >
               Highlight

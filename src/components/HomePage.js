@@ -14,10 +14,10 @@ function HomePage({ daysList, onUpdateDay, onDeleteDay }) {
   ));
 
   return (
-    <div className="container">
+    <div className="container text-center">
       <h1>Fitness and Activeness Tracker App</h1>
       <NavLink to="/add">
-        <button>Add a new Day</button>
+        <button className="btn btn-success btn-lg my-5">Add a new Day</button>
       </NavLink>
       <div className="row">{daysItem}</div>
     </div>
