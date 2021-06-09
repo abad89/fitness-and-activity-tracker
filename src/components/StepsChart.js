@@ -17,7 +17,7 @@ function StepsChart({ daysList }) {
           data={daysList}
           style={{ margin: "auto" }}
         >
-          <Line type="monotone" dataKey="steps" stroke="#0d6efd" />
+          <Line type="monotone" dataKey="steps" stroke="#f47c3c" />
           <CartesianGrid stroke="black" />
           <Tooltip />
           <XAxis dataKey="iso" />
