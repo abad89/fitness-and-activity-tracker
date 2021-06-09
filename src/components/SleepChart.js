@@ -1,27 +1,17 @@
 import { LineChart, Line, CartesianGrid, XAxis, YAxis } from "recharts";
 
-function Chart({ daysList }) {
-//   const daysList2 = [
-//     {
-//       id: 1,
-//       month: "June",
-//       date: 6,
-//       year: 2021,
-//       steps: 12651,
-//       sleepHours: 4,
-//       sleepMinutes: 58,
-//       highlight: "yes",
-//     },
-//   ];
+function SleepChart({ daysList }) {
+  // const sleep = `${sleepHours}.${sleepMinutes}`
   return (
     <div>
+      <h3>Sleep by Day</h3>
       <LineChart
         width={720}
         height={240}
         data={daysList}
         style={{ margin: "auto" }}
       >
-        <Line type="monotone" dataKey="steps" stroke="black" />
+        <Line type="monotone" dataKey="sleepHours" stroke="black" />
         <CartesianGrid stroke="black" />
         <XAxis dataKey="iso" />
         <YAxis />
@@ -30,4 +20,4 @@ function Chart({ daysList }) {
   );
 }
 
-export default Chart;
+export default SleepChart;

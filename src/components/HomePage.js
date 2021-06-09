@@ -1,6 +1,7 @@
 import { NavLink } from "react-router-dom";
 import DayCard from "./DayCard";
-import Chart from "./Chart"
+import StepsChart from "./StepsChart"
+import SleepChart from "./SleepChart"
 
 function HomePage({ daysList, onUpdateDay, onDeleteDay }) {
   
@@ -21,7 +22,8 @@ function HomePage({ daysList, onUpdateDay, onDeleteDay }) {
         <button className="btn btn-success btn-lg my-5">Add Day</button>
       </NavLink>
       <div className="container justify-content-center">
-        <Chart daysList={daysList}/>
+        <StepsChart daysList={daysList}/>
+        <SleepChart daysList={daysList} />
       </div>
       <div className="row">{daysItem}</div>
     </div>
