@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-function AddDayForm() {
+function AddDayForm({ onAddDay }) {
   let history = useHistory();
   const [formData, setFormData] = useState({
     month: "",
@@ -27,7 +27,7 @@ function AddDayForm() {
       steps: parseInt(formData.steps),
       sleepHours: parseInt(formData.sleepHours),
       sleepMinutes: parseInt(formData.sleepMinutes),
-      highlight: "no"
+      highlight: "no",
     };
     fetch("https://fat-app-json-server.herokuapp.com/days", {
       method: "POST",
@@ -37,67 +37,70 @@ function AddDayForm() {
       body: JSON.stringify(newDay),
     })
       .then((r) => r.json())
+      .then(onAddDay)
       .then(history.push("/"));
   }
 
   return (
-    <div>
+    <div className="container border mt-5 w-25 mw-25 d-flex justify-content-evenly" style={{width: "25%"}}>
       <form onSubmit={handleSubmit}>
-        <label>
-          Month
+        <div className="my-3">
           <input
+            placeholder="Month"
             type="text"
             name="month"
             value={formData.month}
             onChange={handleChange}
           ></input>
-        </label>
-        <label>
-          Date
+        </div>
+        <div className="mb-3">
           <input
-            type="text"
+            placeholder="Date"
+            type="number"
             name="date"
             value={formData.date}
             onChange={handleChange}
           ></input>
-        </label>
-        <label>
-          Year
+        </div>
+        <div className="mb-3">
           <input
-            type="text"
+            placeholder="Year"
+            type="number"
             name="year"
             value={formData.year}
             onChange={handleChange}
           ></input>
-        </label>
-        <label>
-          Steps Taken
+        </div>
+        <div className="mb-3">
           <input
-            type="text"
+            placeholder="Steps Taken"
+            type="number"
             name="steps"
             value={formData.steps}
             onChange={handleChange}
           ></input>
-        </label>
-        <label>
-          Time Slept (Hours)
+        </div>
+        <div className="mb-3">
           <input
-            type="text"
+            placeholder="Sleep (Hours)"
+            type="number"
             name="sleepHours"
             value={formData.sleepHours}
             onChange={handleChange}
           ></input>
-        </label>
-        <label>
-          Time Slept (Minutes)
+        </div>
+        <div className="mb-3">
           <input
-            type="text"
+            placeholder="Sleep (Minutes)"
+            type="number"
             name="sleepMinutes"
             value={formData.sleepMinutes}
             onChange={handleChange}
           ></input>
-          <input type="submit" value="Submit"></input>
-        </label>
+          <div className="my-3 w-100 text-center">
+            <input className="w-100 btn btn-primary" type="submit" value="Add"></input>
+          </div>
+        </div>
       </form>
     </div>
   );
