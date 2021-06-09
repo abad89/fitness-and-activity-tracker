@@ -9,6 +9,9 @@ function AddDayForm({ onAddDay }) {
     steps: "",
     sleepHours: "",
     sleepMinutes: "",
+    highlight: "no",
+    iso: "",
+    sleep: "",
   });
 
   function handleChange(e) {
@@ -17,6 +20,7 @@ function AddDayForm({ onAddDay }) {
       [e.target.name]: e.target.value,
     });
   }
+
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -28,6 +32,8 @@ function AddDayForm({ onAddDay }) {
       sleepHours: parseInt(formData.sleepHours),
       sleepMinutes: parseInt(formData.sleepMinutes),
       highlight: "no",
+      iso: `${formData.year}-${String(parseInt(formData.month)).padStart(2, "0")}-${String(parseInt(formData.date)).padStart(2, "0")}`,
+      sleep: parseFloat(`${parseInt(formData.sleepHours)}.${String(parseInt(formData.sleepMinutes)).padStart(2, "0")}`)    
     };
     fetch("https://fat-app-json-server.herokuapp.com/days", {
       method: "POST",
@@ -47,8 +53,10 @@ function AddDayForm({ onAddDay }) {
         <div className="my-3">
           <input
             placeholder="Month"
-            type="text"
+            type="number"
             name="month"
+            min="1"
+            max="12"
             value={formData.month}
             onChange={handleChange}
           ></input>
@@ -58,6 +66,8 @@ function AddDayForm({ onAddDay }) {
             placeholder="Date"
             type="number"
             name="date"
+            min="1"
+            max="31"
             value={formData.date}
             onChange={handleChange}
           ></input>
@@ -67,6 +77,8 @@ function AddDayForm({ onAddDay }) {
             placeholder="Year"
             type="number"
             name="year"
+            min="2020"
+            max="2022"
             value={formData.year}
             onChange={handleChange}
           ></input>

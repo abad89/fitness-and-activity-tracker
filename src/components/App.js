@@ -2,6 +2,8 @@ import { useEffect, useState } from "react"
 import { Route, Switch } from "react-router-dom";
 import HomePage from "./HomePage";
 import AddDayPage from "./AddDayPage";
+import Header from "./Header"
+import Footer from "./Footer"
 
 function App() { 
 
@@ -32,6 +34,7 @@ function App() {
 
   return (
     <div className="App">
+      <Header />
       <Switch>
         <Route exact path="/add">
           <AddDayPage onAddDay={handleAddDay} />
@@ -40,6 +43,7 @@ function App() {
           <HomePage daysList={daysList} onUpdateDay={handleUpdateDay} onDeleteDay={handleDeleteDay} />
         </Route>
       </Switch>
+      <Footer />
     </div>
   );
 }

@@ -1,5 +1,7 @@
+import { DateTime } from "luxon"
+
 function DayCard({ day, onDeleteDay, onUpdateDay }) {
-  const { id, month, date, year, steps, sleepHours, sleepMinutes, highlight } =
+  const { id, steps, sleepHours, sleepMinutes, highlight, iso } =
     day;
   function handleDeleteClick() {
     fetch(`https://fat-app-json-server.herokuapp.com/days/${id}`, {
@@ -37,11 +39,13 @@ function DayCard({ day, onDeleteDay, onUpdateDay }) {
     }
   }
 
+  const dt = DateTime.fromISO(`${iso}`)
+
   return (
     <div className="col-4">
       <div className={`border ${highlight==="yes"?"border-warning":"border-primary"} card text-black bg-white m-3 w-18rem`}>
         <div className={`card-header  ${highlight==="yes"?"bg-warning":"bg-primary"} text-white`}>
-          {month}/{date}/{year}
+          {dt.toLocaleString(DateTime.DATE_FULL)}
         </div>
         <div className="card-body">
           <p className="card-text">Steps Taken: {steps.toLocaleString()}</p>
