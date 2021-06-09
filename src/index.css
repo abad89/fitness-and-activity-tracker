@@ -1,6 +1,4 @@
-.hl-no {
-    color:black
-}
-.hl-yes {
-    color:red
+.btn:focus {
+    outline: none;
+    box-shadow: none;
 }
