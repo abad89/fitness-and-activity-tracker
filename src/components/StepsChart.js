@@ -5,15 +5,14 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  Label,
 } from "recharts";
 
 function StepsChart({ daysList }) {
   return (
-    <div className="col-6 border border-1 border-primary">
+    <div className="mx-1 col-5 border border-3 border-primary">
       <h3>Steps by Date</h3>
         <LineChart
-          width={500}
+          width={400}
           height={250}
           data={daysList}
           style={{ margin: "auto" }}

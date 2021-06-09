@@ -5,16 +5,15 @@ import {
   XAxis,
   YAxis,
   Tooltip,
-  Label,
 } from "recharts";
 
 function SleepChart({ daysList }) {
   return (
-    <div className="col-6 border border-1 border-primary">
-      <h3>Sleep by Date</h3>
-      <div>
+    <div className="mx-1 col-5 border border-3 border-primary">
+      <h3>Sleep Amount by Date</h3>
+      <div className="">
         <LineChart
-          width={500}
+          width={400}
           height={250}
           data={daysList}
           style={{ margin: "auto" }}

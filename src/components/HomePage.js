@@ -27,7 +27,7 @@ function HomePage({ daysList, onUpdateDay, onDeleteDay }) {
   return (
     <div className="container text-center">
       <h1 className="display-2">Fitness and Activeness Tracker App</h1>
-      <div className="d-flex justify-content-evenly w-100">
+      <div className="d-flex  justify-content-evenly mw-100">
         <button
           onClick={handleStepsClick}
           type="button"
@@ -45,9 +45,11 @@ function HomePage({ daysList, onUpdateDay, onDeleteDay }) {
           {hideSleepChart ? "Hide" : "Show"} Sleep Amount Chart
         </button>
       </div>
-      <div className="container justify-content-center row mb-5">
-        {hideStepsChart ? <StepsChart daysList={daysList} /> : null}
-        {hideSleepChart ? <SleepChart daysList={daysList} /> : null}
+      <div className="d-flex mw-100 justify-content-evenly">
+        <div className="container d-flex justify-content-evenly row mb-5">
+          {hideStepsChart ? <StepsChart daysList={daysList} /> : null}
+          {hideSleepChart ? <SleepChart daysList={daysList} /> : null}
+        </div>
       </div>
       <div className="row">{daysItem}</div>
     </div>
