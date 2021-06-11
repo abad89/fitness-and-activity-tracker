@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
-import Buttons from "./Buttons"
+import Buttons from "./Buttons";
 import DayCard from "./DayCard";
 import StepsChart from "./StepsChart";
 import SleepChart from "./SleepChart";
@@ -27,7 +26,12 @@ function HomePage({ daysList, onUpdateDay, onDeleteDay }) {
 
   return (
     <div className="container text-center">
-      <Buttons onSleepClick={handleSleepClick} onStepsClick={handleStepsClick} hideSleepChart={hideSleepChart} hideStepsChart={hideStepsChart} />
+      <Buttons
+        onSleepClick={handleSleepClick}
+        onStepsClick={handleStepsClick}
+        hideSleepChart={hideSleepChart}
+        hideStepsChart={hideStepsChart}
+      />
       <div className="d-flex mw-100 justify-content-evenly">
         <div className="container d-flex justify-content-evenly row mb-5">
           {hideStepsChart ? <StepsChart daysList={daysList} /> : null}
