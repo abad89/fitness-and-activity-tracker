@@ -4,7 +4,9 @@ import Buttons from "./Buttons";
 import Charts from "./Charts";
 
 function HomePage({ daysList, onUpdateDay, onDeleteDay }) {
-  const daysItem = daysList.map((day) => (
+
+
+  const daysItem = daysList.sort(sortByIso).map((day) => (
     <DayCard
       onDeleteDay={onDeleteDay}
       onUpdateDay={onUpdateDay}
@@ -15,6 +17,10 @@ function HomePage({ daysList, onUpdateDay, onDeleteDay }) {
 
   const [hideSleepChart, setHideSleepChart] = useState(true);
   const [hideStepsChart, setHideStepsChart] = useState(true);
+
+  function sortByIso(a, b){
+    return b.iso > a.iso ? 1 : -1
+  }
 
   function handleSleepClick() {
     setHideSleepChart((hideSleepChart) => !hideSleepChart);
