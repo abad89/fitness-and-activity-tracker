@@ -4,6 +4,7 @@ import HomePage from "./HomePage";
 import AddDayPage from "./AddDayPage";
 import Header from "./Header"
 import Footer from "./Footer"
+import LoadingSpinner from "./LoadingSpinner";
 
 function App() { 
 
@@ -40,7 +41,7 @@ function App() {
           <AddDayPage onAddDay={handleAddDay} />
         </Route>
         <Route exact path="/">
-          <HomePage daysList={daysList} onUpdateDay={handleUpdateDay} onDeleteDay={handleDeleteDay} />
+          {daysList.length ? <HomePage daysList={daysList} onUpdateDay={handleUpdateDay} onDeleteDay={handleDeleteDay} /> : <LoadingSpinner />}
         </Route>
       </Switch>
       <Footer />
