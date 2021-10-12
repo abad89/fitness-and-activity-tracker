@@ -9,7 +9,7 @@ import {
 
 function StepsChart({ daysList }) {
   return (
-    <div className="mx-1 col-5 border border-3 border-primary">
+    <div className="mx-1 col-xl-5 col-md-12 border border-3 border-primary">
       <h3>Steps by Date</h3>
         <LineChart
           width={400}

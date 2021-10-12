@@ -9,7 +9,7 @@ import {
 
 function SleepChart({ daysList }) {
   return (
-    <div className="mx-1 col-5 border border-3 border-primary">
+    <div className="mx-1 col-xl-5 col-xs-12 border border-3 border-primary">
       <h3>Sleep Amount by Date</h3>
       <LineChart
         width={400}

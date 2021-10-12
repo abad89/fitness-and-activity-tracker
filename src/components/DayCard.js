@@ -42,7 +42,7 @@ function DayCard({ day, onDeleteDay, onUpdateDay }) {
   const dt = DateTime.fromISO(`${iso}`)
 
   return (
-    <div className="col-4">
+    <div className="col-lg-4 col-sm-12">
       <div className={`border ${highlight==="yes"?"border-warning":"border-primary"} card text-black bg-white m-3 w-18rem`}>
         <div className={`card-header  ${highlight==="yes"?"bg-warning":"bg-primary"} text-white`}>
           {dt.toLocaleString(DateTime.DATE_FULL)}
